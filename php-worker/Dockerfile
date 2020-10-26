@@ -63,7 +63,7 @@ fi
 ARG INSTALL_GD=false
 RUN if [ ${INSTALL_GD} = true ]; then \
    apk add --update --no-cache freetype-dev libjpeg-turbo-dev jpeg-dev libpng-dev; \
-   docker-php-ext-configure gd --with-freetype-dir=/usr/lib/ --with-jpeg-dir=/usr/lib/ --with-png-dir=/usr/lib/ && \
+   docker-php-ext-configure gd --with-freetype=/usr/lib/ --with-jpeg=/usr/lib/ && \
    docker-php-ext-install gd \
 ;fi
 
